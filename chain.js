@@ -8,7 +8,7 @@ class Chain{
             stiffness: 0.07,
             bodyA: body1,
             bodyB: body2,
-            
+            PointB: {x:this.offsetX, y: this.offsetY}
             
         }
         this.chain = Constraint.create(options);

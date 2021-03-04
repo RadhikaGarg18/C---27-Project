@@ -8,7 +8,7 @@ class Chain{
             stiffness: 0.07,
             bodyA: body1,
             bodyB: body2,
-            pointB: {x:this.offsetX, y: this.offsetY},
+            
             
         }
         this.chain = Constraint.create(options);
@@ -23,7 +23,7 @@ class Chain{
 
         var Anchor2Y = PointB.y + this.offsetY
         var Anchor2X = PointB.x + this.offsetX
-        line(pointA.x,pointA.y,pointB.x,pointB.y);
+        line(Anchor1X,Anchor1Y,Anchor2X,Anchor2Y);
 
         
     }

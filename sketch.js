@@ -1,12 +1,12 @@
+var bobObject1, bobObject2, bobObject3, bobObject4, bobObject5;
+var roof;
+var rope1, rope2, rope3, rope4, rope5;
 
+const Constraint= Matter.Constraint;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-const Constraint= Matter.Constraint;
-
-var bob1, bob2, bob3, bob4,bob5;
-var roof;
 
 function preload()
 {
@@ -21,17 +21,20 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
-	roof = new Roof(400,200,500,40);
-	bob1 = new Bob(400,500,100,100);
-	bob2 = new Bob(500,500,100,100);
-	bob3 = new Bob(600,500,100,100);
-	bob4 = new Bob(300,500,400,40);
-	bob5 = new Bob(200,500,400,40);
-	chain = new Chain(roof.body,bob1.body);
-	chain2 = new Chain(roof.body,bob2.body);
-	chain3 = new Chain(roof.body,bob3.body);
-	chain4 = new Chain(roof.body,bob4.body);
-	chain5 = new Chain(roof.body,bob5.body);
+	roof = new Ground(400,200,600,50);
+
+	bobObject1 = new Bob(200,600);
+	bobObject2 = new Bob(300,600);
+	bobObject3 = new Bob(400,600);
+	bobObject4 = new Bob(500,600);
+	bobObject5 = new Bob(600,600);
+
+	rope1 = new Rope(bobObject1.body,roof.body,-200,0);
+	rope2 = new Rope(bobObject2.body,roof.body,-100,0);
+	rope3 = new Rope(bobObject3.body,roof.body,0,0);
+	rope4 = new Rope(bobObject4.body,roof.body,100,0);
+	rope5 = new Rope(bobObject5.body,roof.body,200,0);
+
 	Engine.run(engine);
   
 }
@@ -39,21 +42,23 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background("orange");
+  background(0);
   
-  chain.display();
-  chain2.display();
-  chain3.display();
-  chain4.display();
-  chain5.display();
-  bob1.display();
-  bob2.display();
-  bob3.display();
-  bob4.display();
-  bob5.display();
+  
+  rope1.display();
+  rope2.display();
+  rope3.display();
+  rope4.display();
+  rope5.display();
+
+  bobObject1.display();
+  bobObject2.display();
+  bobObject3.display();
+  bobObject4.display();
+  bobObject5.display();
+
   roof.display();
   drawSprites();
-
  
 }
 

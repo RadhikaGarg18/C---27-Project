@@ -7,8 +7,7 @@ class Bob {
           'density':1
        }
       this.body = Bodies.circle(x,y,20,options);
-      this.width = width;
-      this.height = height;
+    
       
       World.add(world, this.body);
     }
@@ -18,11 +17,9 @@ class Bob {
       push();
       translate(pos.x, pos.y);
       rotate(angle);
-      rectMode(CENTER);
-      fill("pink");
-      stroke("black");
-      strokeWeight(3);
-      ellipse(0, 0, 97, 97);
+      fill(225,0,225)
+      ellipseMode(CENTER);
+      ellipse(0, 0, 100);
       pop();
     }
   };
